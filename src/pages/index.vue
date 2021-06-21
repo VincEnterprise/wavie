@@ -49,7 +49,7 @@ const { t } = useI18n()
 
     <div>
       <button
-        class="m-3 text-sm btn"
+        class="m-3 text-sm bg-yellow-900"
         :disabled="!name"
         @click="go"
       >
