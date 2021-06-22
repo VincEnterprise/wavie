@@ -4,7 +4,7 @@
 declare module 'vue' {
   export interface GlobalComponents {
     Footer: typeof import('./src/components/Footer.vue')['default']
-    README: typeof import('./src/components/README.md')['default']
+    Header: typeof import('./src/components/Header.vue')['default']
     DropdownButton: typeof import('./src/components/atoms/DropdownButton.vue')['default']
     DropdownOption: typeof import('./src/components/atoms/DropdownOption.vue')['default']
     DropdownOptions: typeof import('./src/components/atoms/DropdownOptions.vue')['default']
@@ -14,13 +14,6 @@ declare module 'vue' {
     Toggle: typeof import('./src/components/atoms/Toggle.vue')['default']
     Dropdown: typeof import('./src/components/molecules/Dropdown.vue')['default']
     ConverterGroup: typeof import('./src/components/organisms/ConverterGroup.vue')['default']
-    Header: typeof import('./src/components/Header.vue')['default']
-    CarbonCampsite: typeof import('virtual:vite-icons/carbon/campsite')['default']
-    CarbonMoon: typeof import('virtual:vite-icons/carbon/moon')['default']
-    CarbonSun: typeof import('virtual:vite-icons/carbon/sun')['default']
-    CarbonLanguage: typeof import('virtual:vite-icons/carbon/language')['default']
-    CarbonDicomOverlay: typeof import('virtual:vite-icons/carbon/dicom-overlay')['default']
-    CarbonLogoGithub: typeof import('virtual:vite-icons/carbon/logo-github')['default']
   }
 }
 

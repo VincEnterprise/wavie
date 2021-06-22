@@ -9,7 +9,7 @@
         absolute
         -z-1
         overflow-hidden
-        -inset-[3px]
+        -inset-0
         <!--💄-->
         rounded-3xl
         sm:rounded-4xl

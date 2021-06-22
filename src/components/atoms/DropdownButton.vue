@@ -86,5 +86,5 @@
 </template>
 
 <script setup lang="ts">
-import { ListboxButton } from "@headlessui/vue"
+import { ListboxButton } from '@headlessui/vue'
 </script>
