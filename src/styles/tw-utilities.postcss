@@ -1,28 +1,5 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/utilities';
 
-@layer base {
-  @font-face {
-    font-family: "Quicksand";
-    font-weight: 500 900;
-    font-display: swap;
-    font-style: normal;
-    font-named-instance: "Medium";
-    src: local("Quicksand"), url("./font/QuicksandVF.woff2") format("woff2"),
-      url("./font/QuicksandVF.woff") format("woff");
-  }
-
-  html {
-    background-color: theme("colors.yellow.500");
-    font-size: 18px;
-    @apply text-gray-800;
-  }
-
-  * {  -webkit-backface-visibility:  hidden;
-    -webkit-tap-highlight-color:  transparent;
- }
-}
 
 @layer utilities {
   @variants responsive {
@@ -55,10 +32,4 @@
     -webkit-mask-composite: source-out;
     mask-composite: exclude;
   }
-}
-
-html,
-body,
-#app {
-  height: 100%;
 }
