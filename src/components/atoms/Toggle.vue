@@ -1,0 +1,88 @@
+<template>
+  <SwitchGroup
+    as="div"
+    class="
+      <==TOGGLE__GROUP==>
+      select-none
+      mb-1
+      inline-flex
+      flex-col
+      gap-2
+      focus:outline-none
+      focus-visible:ring-4
+    "
+  >
+    <SwitchLabel active class="<==TOGGLE__LABEL==> cursor-pointer">
+      Afgerond:
+    </SwitchLabel>
+    <Switch
+      v-model="enabled"
+      :class="[
+        enabled ? 'from-green-500 to-green-700' : 'from-gray-300 to-gray-200',
+      ]"
+      class="
+        <==TOGGLE==>
+        <!--📦-->
+        relative
+        inline-flex
+        flex-shrink-0
+        h-6
+        w-14
+        <!--💄-->
+        bg-gradient-to-r bg-origin-border-box
+        border-2 border-transparent
+        rounded-full
+        shadow-md
+        <!--🚀-->
+        transition-colors
+        ease-in-out
+        duration-200
+        <!--👇-->
+        cursor-pointer
+        focus:outline-none
+        focus-visible:ring-2
+        focus-visible:ring-white
+        focus-visible:ring-opacity-75
+      "
+    >
+      <span class="sr-only">Use setting</span>
+      <span
+        aria-hidden="true"
+        :class="[enabled ? 'translate-x-8' : 'translate-x-0']"
+        class="
+          <==TOGGLE__CIRCLE==>
+          <!--📦-->
+          inline-block
+          h-5
+          w-5
+          <!--💄-->
+          rounded-full
+          bg-white
+          shadow-lg
+          ring-0
+          <!--🚀-->
+          transition
+          ease-button-cubic-1
+          duration-200
+          <!--👇-->
+          pointer-events-none
+        "
+      />
+    </Switch>
+  </SwitchGroup>
+</template>
+
+<script setup lang="ts">
+import { ref, watch, defineProps, defineEmit } from "vue"
+import { SwitchGroup, Switch, SwitchLabel } from "@headlessui/vue"
+
+const props = defineProps({ initialValue: { default: true, type: Boolean } })
+const emit = defineEmit(['updateToggle'])
+
+const { initialValue } = props
+const enabled = ref(initialValue)
+
+watch(enabled, (bool) => {
+  emit("updateToggle", bool)
+})
+</script>
