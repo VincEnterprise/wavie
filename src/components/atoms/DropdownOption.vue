@@ -1,7 +1,7 @@
 <template>
   <ListboxOption
-    v-slot="{ active, selected }"
     v-for="option in optionsArray"
+    v-slot="{ active, selected }"
     :key="option.value"
     :value="option"
     as="template"
@@ -9,7 +9,7 @@
     <li class="relative cursor-pointer select-none py-2 pl-10 pr-4'">
       <div
         v-if="selected"
-        :class="[active ?? 'opacity-0']"
+        :class="active && 'opacity-0'"
         class="
           <==SELECTION__CURRENT==>
           <!--📦️-->
@@ -26,11 +26,11 @@
         "
       ></div>
       <div
-        :class="[
+        :class="
           active
             ? 'translate-y-0 scale-100 opacity-100 duration-300'
-            : ' scale-50 opacity-0 duration-34',
-        ]"
+            : 'scale-50 opacity-0 duration-34'
+        "
         class="
           <==SELECTION__HOVER==>
           <!--📦️-->
@@ -49,7 +49,7 @@
           ease-button-cubic-1
         "
       ></div>
-      <span :class="[selected && 'font-semibold']" class="block truncate">
+      <span :class="selected && 'font-semibold'" class="block truncate">
         {{ option.label }}
       </span>
       <span
@@ -63,11 +63,11 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, useContext } from "vue"
-import { ListboxOption } from "@headlessui/vue"
-import { CheckIcon } from "@heroicons/vue/solid"
+import { defineProps } from 'vue'
+import { ListboxOption } from '@headlessui/vue'
+import { CheckIcon } from '@heroicons/vue/solid'
 
 const props = defineProps({
-  optionsArray: Array,
+  optionsArray: { type: Array, required: true },
 })
 </script>

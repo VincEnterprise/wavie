@@ -13,13 +13,13 @@
     "
   >
     <SwitchLabel active class="<==TOGGLE__LABEL==> cursor-pointer">
-      Afgerond:
+      {{ t("toggle.rounded") }}
     </SwitchLabel>
     <Switch
       v-model="enabled"
-      :class="[
-        enabled ? 'from-green-500 to-green-700' : 'from-gray-300 to-gray-200',
-      ]"
+      :class="
+        enabled ? 'from-green-500 to-green-700' : 'from-gray-300 to-gray-200'
+      "
       class="
         <==TOGGLE==>
         <!--📦-->
@@ -48,7 +48,7 @@
       <span class="sr-only">Use setting</span>
       <span
         aria-hidden="true"
-        :class="[enabled ? 'translate-x-8' : 'translate-x-0']"
+        :class="enabled ? 'translate-x-8' : 'translate-x-0'"
         class="
           <==TOGGLE__CIRCLE==>
           <!--📦-->
@@ -73,16 +73,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, defineProps, defineEmit } from "vue"
-import { SwitchGroup, Switch, SwitchLabel } from "@headlessui/vue"
+import { ref, watch, defineProps, defineEmit } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { SwitchGroup, Switch, SwitchLabel } from '@headlessui/vue'
+
+const { t } = useI18n()
 
 const props = defineProps({ initialValue: { default: true, type: Boolean } })
-const emit = defineEmit(['updateToggle'])
+const emit = defineEmit(['update-toggle'])
 
 const { initialValue } = props
 const enabled = ref(initialValue)
 
 watch(enabled, (bool) => {
-  emit("updateToggle", bool)
+  emit('update-toggle', bool)
 })
 </script>

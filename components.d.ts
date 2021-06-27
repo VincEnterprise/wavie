@@ -6,6 +6,7 @@ declare module 'vue' {
     Footer: typeof import('./src/components/Footer.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
     DropdownButton: typeof import('./src/components/atoms/DropdownButton.vue')['default']
+    DropdownContent: typeof import('./src/components/atoms/DropdownContent.vue')['default']
     DropdownOption: typeof import('./src/components/atoms/DropdownOption.vue')['default']
     DropdownOptions: typeof import('./src/components/atoms/DropdownOptions.vue')['default']
     GlassPanel: typeof import('./src/components/atoms/GlassPanel.vue')['default']
@@ -14,6 +15,7 @@ declare module 'vue' {
     Toggle: typeof import('./src/components/atoms/Toggle.vue')['default']
     Dropdown: typeof import('./src/components/molecules/Dropdown.vue')['default']
     ConverterGroup: typeof import('./src/components/organisms/ConverterGroup.vue')['default']
+    CarbonLanguage: typeof import('virtual:vite-icons/carbon/language')['default']
   }
 }
 

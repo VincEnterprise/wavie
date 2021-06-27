@@ -45,8 +45,8 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from "vue"
-import { LightningBoltIcon, ClockIcon } from "@heroicons/vue/outline"
+import { defineProps } from 'vue'
+import { LightningBoltIcon, ClockIcon } from '@heroicons/vue/outline'
 
 const props = defineProps({
   icon: String,

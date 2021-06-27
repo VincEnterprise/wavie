@@ -5,9 +5,21 @@ button:
   home: Home
   toggle_dark: Toggle dark mode
   toggle_langs: Change languages
+
 intro:
-  desc: Opinionated Vite Starter Template
-  dynamic-route: Demo of dynamic route
-  hi: Hi, {name}!
-  whats-your-name: What's your name?
+  desc: Convert microwave wattages.
+
 not-found: Not found
+
+label:
+  package-wattage: 'Package wattage:'
+  package-time: 'Package time:'
+  microwave-wattage: 'Microwave wattage:'
+  microwave-time: 'Microwave time:'
+
+option-label:
+  seconds: seconds
+  watt: Watt
+
+toggle:
+  rounded: 'Rounded:'

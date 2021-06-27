@@ -1,6 +1,6 @@
 <template>
   <section
-    class="<==GLASS-PANEL__WRAPPER==> relative z-1 p-3 sm:p-6 md:p-8 lg:p-10 xl:p-12"
+    class="<==GLASS-PANEL__WRAPPER==> relative z-1 p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12"
   >
     <div
       class="
@@ -8,10 +8,9 @@
         <!--📦-->
         absolute
         -z-1
+        inset-0
         overflow-hidden
-        -inset-0
         <!--💄-->
-        rounded-3xl
         sm:rounded-4xl
         bg-white/20
         shadow-md
@@ -19,7 +18,7 @@
       "
     >
       <div class="noise-texture absolute inset-0"></div>
-      <div class="bg-gradient-to-b from-white/25 to-white/30 mask-exclude absolute inset-0 rounded-3xl sm:rounded-4xl p-[3px]"></div>
+      <div class="bg-gradient-to-b from-white/25 to-white/30 mask-exclude absolute sm:rounded-4xl inset-0 py-[3px] sm:p-[3px]"></div>
     </div>
 
     <slot></slot>

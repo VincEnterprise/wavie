@@ -11,29 +11,61 @@
       :icon="icon"
     >
       <Dropdown
-        :label="label"
         :id="id"
-        :optionsArray="data"
-        :initialValue="value"
-        @updateOption="handleOptionUpdate"
+        :initial-value="value"
+        :options-array="data"
+        :label="label"
+        @update-option="handleOptionUpdate"
       />
     </StepPanel>
 
     <StepPanel :key="3">
       <h2 class="text-gray-700 font-semibold block ml-1 mb-4">
-        Tijd van de magnetron:
+        {{ t('label.microwave-time') }}
       </h2>
       <div class="flex flex-grow flex-wrap gap-4">
         <MicrowaveTime :time="microwaveTime" />
-        <Toggle  @updateToggle="handleToggleUpdate" />
+        <Toggle @update-toggle="handleToggleUpdate" />
       </div>
     </StepPanel>
   </transition-group>
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from "vue"
-import { wattages, times, convertToMMSS } from "./data.js"
+import { computed, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
+
+//
+// ─── DROPDOWN DATA ──────────────────────────────────────────────────────────────
+//
+function* range(start: int, end: int, step: int) {
+  while (start <= end) {
+    yield start
+    start += step
+  }
+}
+
+function formatSeconds(seconds) {
+  const ISOString = new Date(seconds * 1000).toISOString()
+
+  // If the time is over an hour (3600 seconds) we need to also show the "HH:" part of the ISO string.
+  return (seconds >= 3600) ? ISOString.substr(11, 8) : ISOString.substr(14, 5)
+}
+
+const wattages = Array.from(range(300, 1600, 25)).map((wattage) => {
+  return {
+    value: wattage,
+    label: `${wattage} ${t('option-label.watt')}`,
+  }
+})
+
+const times = ref(Array.from(range(30, 900, 30)).map((seconds) => {
+  return {
+    value: seconds,
+    label: `${formatSeconds(seconds)} (${seconds} ${t('option-label.seconds')})`,
+  }
+}))
 
 //
 // ─── SET DATA FOR 3 DROPDOWNS ───────────────────────────────────────────────────
@@ -43,22 +75,22 @@ const dropdowns = ref([
     id: 0,
     value: 700,
     data: wattages,
-    icon: "LightningBoltIcon",
-    label: "Wattage van de verpakking:",
+    icon: 'LightningBoltIcon',
+    label: t('label.package-wattage'),
   },
   {
     id: 1,
     value: 360,
     data: times,
-    icon: "ClockIcon",
-    label: "Tijd van de verpakking:",
+    icon: 'ClockIcon',
+    label: t('label.package-time'),
   },
   {
     id: 2,
     value: 900,
     data: wattages,
-    icon: "LightningBoltIcon",
-    label: "Wattage van de magnetron:",
+    icon: 'LightningBoltIcon',
+    label: t('label.microwave-wattage'),
   },
 ])
 
@@ -74,29 +106,27 @@ function handleOptionUpdate({ id, value }) {
 //
 const rounded = ref(true)
 
-function handleToggleUpdate(bool) {
+function handleToggleUpdate(bool: boolean) {
   rounded.value = bool
 }
 
 //
 // ─── CALCULATE MICROWAVE TIME ───────────────────────────────────────────────────
 //
-const [packageWattage, packageTime, microwaveWattage] = dropdowns.value
 const microwaveTime = computed(() => {
-  let hour = false // Most microwaveTimes are under 1 hour.
+  const [packageWattage, packageTime, microwaveWattage] = dropdowns.value
 
   // Divide package time by ( microwave wattage / package wattage )
   // i.e. 360 seconds  / ( 900 watt / 700 watt ) = 280 seconds
   let microwaveTime = packageTime.value / (microwaveWattage.value / packageWattage.value)
+
+  // Round the value up to the nearest full second
   microwaveTime = Math.round(microwaveTime)
 
-  // If the microwaveTime is over 3600, hour is true.
-  if (3600 <= microwaveTime) hour = true
+  // Round the value up to the nearest 5 second step.
+  if (rounded.value === true) microwaveTime = Math.ceil(microwaveTime / 5) * 5
 
-  // Round the value to the nearest 5 seconds increment.
-  if (true === rounded.value) microwaveTime = Math.ceil(microwaveTime / 5) * 5
-
-  // Use convertToMMSS to format a JS date string.
-  return convertToMMSS(microwaveTime, false, hour)
+  // Use formatSeconds to format seconds to a JS date string.
+  return formatSeconds(microwaveTime)
 })
 </script>

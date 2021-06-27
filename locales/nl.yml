@@ -1,0 +1,25 @@
+button:
+  about: Over
+  back: Terug
+  go: GA
+  home: Thuis
+  toggle_dark: Gebruik donkere modus
+  toggle_langs: Wijzig taal
+
+intro:
+  desc: Converteer magnetron wattages.
+
+not-found: Niet gevonden
+
+label:
+  package-wattage: 'Wattage van de verpakking:'
+  package-time: 'Tijd van de verpakking:'
+  microwave-wattage: 'Wattage van de magnetron:'
+  microwave-time: 'Tijd van de magnetron:'
+
+option-label:
+  seconds: seconden
+  watt: watt
+
+toggle:
+  rounded: 'Afgerond:'

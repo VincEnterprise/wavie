@@ -1,5 +1,5 @@
 <template>
-  <Listbox v-model="selectedOption" v-slot="{ open }">
+  <Listbox v-slot="{ open }" v-model="selectedOption">
     <ListboxLabel class="ml-4 text-gray-700 font-semibold">
       {{ label }}
     </ListboxLabel>
@@ -59,7 +59,7 @@
               "
             ></div>
             <ChevronDownIcon
-              :class="[open ? `rotate-180 duration-400` : `duration-200`]"
+              :class="open ? `rotate-180 duration-400` : `duration-200`"
               class="absolute inset-0 ease-button-cubic-1 text-white"
               aria-hidden="true"
             />
@@ -68,34 +68,35 @@
       </DropdownButton>
 
       <DropdownOptions>
-        <DropdownOption :optionsArray="optionsArray" />
+        <DropdownOption :options-array="optionsArray" />
       </DropdownOptions>
     </div>
   </Listbox>
 </template>
 
 <script setup lang="ts">
-import { ref, watch, defineProps, defineEmit } from "vue"
-import { Listbox, ListboxLabel } from "@headlessui/vue"
-import { ChevronDownIcon } from "@heroicons/vue/solid"
+import { ref, watch, defineProps, defineEmit } from 'vue'
+import { Listbox, ListboxLabel } from '@headlessui/vue'
+import { ChevronDownIcon } from '@heroicons/vue/solid'
 
-const emit = defineEmit(["updateOption"])
+const emit = defineEmit(['update-option'])
+
 const props = defineProps({
-  label: String,
-  id: Number,
-  optionsArray: Array,
-  initialValue: Number,
+  id: { type: Number, required: true },
+  initialValue: { type: Number, required: true },
+  optionsArray: { type: Object, required: true },
+  label: { type: String, required: true },
 })
-const { id, optionsArray, initialValue } = props
+const { id, initialValue, optionsArray } = props
 
 // Find the index in optionsArray where initialValue is located
-const initialPos = optionsArray.map((x) => x.value).indexOf(initialValue)
+const initialPos = optionsArray.map(index => index.value).indexOf(initialValue)
 const selectedOption = ref(optionsArray[initialPos])
 
-watch(selectedOption, (option) => {
-  emit("updateOption", {
+watch(selectedOption, (option: Object) => {
+  emit('update-option', {
     value: option.value,
-    id: id,
+    id,
   })
 })
 </script>
