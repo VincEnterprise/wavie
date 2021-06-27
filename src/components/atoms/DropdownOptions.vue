@@ -39,5 +39,5 @@
 </template>
 
 <script setup lang="ts">
-import { ListboxOptions } from "@headlessui/vue"
+import { ListboxOptions } from '@headlessui/vue'
 </script>

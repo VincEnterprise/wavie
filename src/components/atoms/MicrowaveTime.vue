@@ -1,6 +1,6 @@
 <template>
   <div class="<==CLOCK==> flex gap-2">
-    <template v-for="character in split" :key="character.id">
+    <template v-for="(character, index) in split" :key="index">
       <span
         v-if="':' === character"
         class="
@@ -31,7 +31,6 @@
         enter-to-class="opacity-100 scale-y-100"
       >
         <span
-          :key="character.id"
           class="
             <==CLOCK__NUMBER==>
             <!--📦-->
@@ -62,14 +61,14 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, toRefs, computed } from "vue"
+import { defineProps, toRefs, computed } from 'vue'
 
 const props = defineProps({
-  time: String,
+  time: { type: String, required: true },
 })
+const { time } = toRefs(props)
 
 // Split each character of the time string into an array
-const { time } = toRefs(props)
 const split = computed(() => {
   return [...time.value]
 })

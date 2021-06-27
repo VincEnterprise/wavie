@@ -4,10 +4,12 @@
     class="
       <==TOGGLE__GROUP==>
       select-none
-      mb-1
+      self-end
       inline-flex
-      flex-col
+      flex-1
+      flex-wrap
       gap-2
+      mb-0.5
       focus:outline-none
       focus-visible:ring-4
     "
@@ -27,7 +29,7 @@
         inline-flex
         flex-shrink-0
         h-6
-        w-14
+        w-16
         <!--💄-->
         bg-gradient-to-r bg-origin-border-box
         border-2 border-transparent
@@ -48,7 +50,7 @@
       <span class="sr-only">Use setting</span>
       <span
         aria-hidden="true"
-        :class="enabled ? 'translate-x-8' : 'translate-x-0'"
+        :class="enabled ? 'translate-x-10' : 'translate-x-0'"
         class="
           <==TOGGLE__CIRCLE==>
           <!--📦-->
@@ -58,9 +60,11 @@
           <!--💄-->
           rounded-full
           bg-white
+          border-gray-200
           shadow-lg
           ring-0
           <!--🚀-->
+          will-transform
           transition
           ease-button-cubic-1
           duration-200
