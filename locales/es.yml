@@ -11,6 +11,8 @@ intro:
 
 not-found: No se ha encontrado
 
+built-by: Construido por
+
 label:
   package-wattage: 'Potencia de embalaje:'
   package-time: 'Tiempo de embalaje:'

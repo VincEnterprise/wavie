@@ -11,6 +11,8 @@ intro:
 
 not-found: Niet gevonden
 
+built-by: Gebouwd door
+
 label:
   package-wattage: 'Wattage van de verpakking:'
   package-time: 'Tijd van de verpakking:'

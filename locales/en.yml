@@ -11,6 +11,8 @@ intro:
 
 not-found: Not found
 
+built-by: Built by
+
 label:
   package-wattage: 'Packaging wattage:'
   package-time: 'Packaging time:'

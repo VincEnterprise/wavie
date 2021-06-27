@@ -11,9 +11,11 @@ intro:
 
 not-found: Pas trouvé
 
+built-by: Construit par
+
 label:
-  package-wattage: 'Puissance d'emballage:'
-  package-time: 'Temps d'emballage:'
+  package-wattage: 'Puissance d''emballage:'
+  package-time: 'Temps d''emballage:'
   microwave-wattage: 'Puissance du micro-ondes:'
   microwave-time: 'Temps du micro-ondes:'
 

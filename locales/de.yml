@@ -11,6 +11,8 @@ intro:
 
 not-found: Nicht gefunden
 
+built-by: Gebaut von
+
 label:
   package-wattage: 'Wattzahl der Verpackung:'
   package-time: 'Verpackungszeit:'
