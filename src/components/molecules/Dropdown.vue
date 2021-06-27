@@ -4,7 +4,7 @@
       {{ label }}
     </ListboxLabel>
     <div class="relative mt-4">
-      <DropdownButton class="group">
+      <DropdownButton class="group select-none">
         <span class="block text-left truncate">{{ selectedOption.label }}</span>
         <span
           class="

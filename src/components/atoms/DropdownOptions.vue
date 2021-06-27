@@ -3,7 +3,7 @@
     leave-active-class="transition duration-100 ease-in"
     leave-from-class="opacity-100 scale-y-100"
     leave-to-class="opacity-0 scale-y-90"
-    enter-active-class="transition duration-300 ease-out"
+    enter-active-class="transition duration-500 ease-out"
     enter-from-class="opacity-0 scale-y-90"
     enter-to-class="opacity-100 scale-y-100"
   >
@@ -30,6 +30,7 @@
         <!--🚀-->
         will-transform
         <!--👇-->
+        select-none
         focus:outline-none
       "
     >

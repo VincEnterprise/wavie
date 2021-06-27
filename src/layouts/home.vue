@@ -1,5 +1,5 @@
 <template>
-  <div class="microwave-gradient grid min-h-full">
+  <div class="microwave-gradient grid min-h-full pt-4 md:pt-0">
     <div class="container py-4 sm:p-4 place-self-center">
       <Header />
       <router-view />
