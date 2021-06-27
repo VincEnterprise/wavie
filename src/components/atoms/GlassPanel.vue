@@ -27,8 +27,8 @@
 
 <style scoped>
 .noise-texture {
-  background-image: url("./img/noise-texture.png");
-  background-image: url("./img/noise.jpg");
+  background-image: url("../img/noise-texture.png");
+  background-image: url("../img/noise.jpg");
   opacity: 0.05;
   background-size: 50%;
 }
