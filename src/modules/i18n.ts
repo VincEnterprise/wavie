@@ -12,10 +12,10 @@ const messages = Object.fromEntries(
     }),
 )
 
-export const install: UserModule = ({ app }) => {
+export const install: UserModule = ({ isClient, app }) => {
   const i18n = createI18n({
     legacy: false,
-    locale: navigator.language,
+    locale: isClient ? navigator.language : 'en',
     messages,
   })
 
