@@ -1,0 +1,25 @@
+button:
+  about: Über
+  back: Zurück
+  go: Los
+  home: Startseite
+  toggle_dark: Dunkelmodus umschalten
+  toggle_langs: Sprachen ändern
+
+intro:
+  desc: Konvertier Mikrowelle Wattleistung.
+
+not-found: Nicht gefunden
+
+label:
+  package-wattage: 'Wattzahl der Verpackung:'
+  package-time: 'Verpackungszeit:'
+  microwave-wattage: 'Wattleistung der Mikrowelle:'
+  microwave-time: 'Zeit der Mikrowelle:'
+
+option-label:
+  seconds: Sekunden
+  watt: Watt
+
+toggle:
+  rounded: 'Abgerundet:'

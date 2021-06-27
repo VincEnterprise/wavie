@@ -12,14 +12,14 @@ intro:
 not-found: Not found
 
 label:
-  package-wattage: 'Package wattage:'
-  package-time: 'Package time:'
+  package-wattage: 'Packaging wattage:'
+  package-time: 'Packaging time:'
   microwave-wattage: 'Microwave wattage:'
   microwave-time: 'Microwave time:'
 
 option-label:
   seconds: seconds
-  watt: Watt
+  watt: watt
 
 toggle:
   rounded: 'Rounded:'

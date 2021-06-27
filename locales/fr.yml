@@ -1,0 +1,25 @@
+button:
+  about: À propos de
+  back: Retour
+  go: Essayer
+  home: Accueil
+  toggle_dark: Basculer en mode sombre
+  toggle_langs: Changer de langue
+
+intro:
+  desc: Convertissez les puissances des micro-ondes.
+
+not-found: Pas trouvé
+
+label:
+  package-wattage: 'Puissance d'emballage:'
+  package-time: 'Temps d'emballage:'
+  microwave-wattage: 'Puissance du micro-ondes:'
+  microwave-time: 'Temps du micro-ondes:'
+
+option-label:
+  seconds: secondes
+  watt: watt
+
+toggle:
+  rounded: 'Arrondi:'
