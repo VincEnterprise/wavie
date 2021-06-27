@@ -60,7 +60,7 @@
             ></div>
             <ChevronDownIcon
               :class="open ? `rotate-180 duration-400` : `duration-200`"
-              class="absolute inset-0 ease-button-cubic-1 text-white"
+              class="absolute inset-0 will-transform ease-button-cubic-1 text-white"
               aria-hidden="true"
             />
           </div>

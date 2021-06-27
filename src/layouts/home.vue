@@ -24,19 +24,11 @@
 }
 
 @keyframes scrolling-gradient {
-  0% {
+  0%, 5% {
     background-position: 125% 0;
   }
 
-  5% {
-    background-position: 125% 0;
-  }
-
-  95% {
-    background-position: -25% 0;
-  }
-
-  100% {
+  95%, 100% {
     background-position: -25% 0;
   }
 }
