@@ -15,6 +15,9 @@ export default defineConfig({
       'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js',
     },
   },
+  server: {
+    host: '0.0.0.0'
+  },
   plugins: [
     Vue({
       include: [/\.vue$/],
