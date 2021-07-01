@@ -6,24 +6,25 @@
     appear
   >
     <StepPanel
-      v-for="{ label, id, value, data, icon } in dropdowns"
+      v-for="{ id, value, data, icon, label, } in dropdowns"
       :key="id"
-      :icon="icon"
     >
       <Dropdown
         :id="id"
         :initial-value="value"
         :options-array="data"
+        :icon="icon"
         :label="label"
         @update-option="handleOptionUpdate"
       />
     </StepPanel>
 
     <StepPanel :key="3">
-      <h2 class="text-gray-700 font-semibold block ml-1 mb-4">
+      <h2 class="text-gray-700 font-semibold flex items-center mb-4">
+        <uil-clock-eight class="h-5 text-gray-600 rounded-full mr-1.5" />
         {{ t('label.microwave-time') }}
       </h2>
-      <div class="flex flex-grow flex-wrap gap-4">
+      <div class="flex flex-grow flex-wrap gap-5">
         <MicrowaveTime :time="microwaveTime" />
         <Toggle @update-toggle="handleToggleUpdate" />
       </div>
@@ -40,14 +41,14 @@ const { t } = useI18n()
 //
 // ─── DROPDOWN DATA ──────────────────────────────────────────────────────────────
 //
-function* range(start: int, end: int, step: int) {
+function* range(start: number, end: number, step: number) {
   while (start <= end) {
     yield start
     start += step
   }
 }
 
-function formatSeconds(seconds) {
+function formatSeconds(seconds: number) {
   const ISOString = new Date(seconds * 1000).toISOString()
 
   // If the time is over an hour (3600 seconds) we need to also show the "HH:" part of the ISO string.
@@ -61,12 +62,12 @@ const wattages = Array.from(range(300, 1600, 25)).map((wattage) => {
   }
 })
 
-const times = ref(Array.from(range(30, 900, 30)).map((seconds) => {
+const times = Array.from(range(30, 900, 30)).map((seconds) => {
   return {
     value: seconds,
     label: `${formatSeconds(seconds)} (${seconds} ${t('option-label.seconds')})`,
   }
-}))
+})
 
 //
 // ─── SET DATA FOR 3 DROPDOWNS ───────────────────────────────────────────────────
@@ -76,21 +77,21 @@ const dropdowns = ref([
     id: 0,
     value: 700,
     data: wattages,
-    icon: 'LightningBoltIcon',
+    icon: 'uil-bolt',
     label: t('label.package-wattage'),
   },
   {
     id: 1,
     value: 360,
     data: times,
-    icon: 'ClockIcon',
+    icon: 'uil-clock',
     label: t('label.package-time'),
   },
   {
     id: 2,
     value: 900,
     data: wattages,
-    icon: 'LightningBoltIcon',
+    icon: 'uil-bolt',
     label: t('label.microwave-wattage'),
   },
 ])
@@ -98,7 +99,7 @@ const dropdowns = ref([
 //
 // ─── HANDLE WHEN A NEW DROPDOWN OPTION IS PICKED ────────────────────────────────
 //
-function handleOptionUpdate({ id, value }) {
+function handleOptionUpdate({ id, value }: { id: number; value: number }) {
   dropdowns.value[id].value = value
 }
 

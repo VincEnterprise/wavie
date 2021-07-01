@@ -8,6 +8,7 @@
       inline-flex
       flex-1
       flex-wrap
+      items-center
       gap-2
       mb-0.5
       focus:outline-none
@@ -79,7 +80,6 @@
 <script setup lang="ts">
 import { ref, watch, defineProps, defineEmit } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { SwitchGroup, Switch, SwitchLabel } from '@headlessui/vue'
 
 const { t } = useI18n()
 

@@ -84,7 +84,3 @@
     </span>
   </ListboxButton>
 </template>
-
-<script setup lang="ts">
-import { ListboxButton } from '@headlessui/vue'
-</script>

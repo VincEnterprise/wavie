@@ -25,30 +25,9 @@
         duration-300
       "
     >
-      <!-- <LightningBoltIcon
-      v-if="icon === 'LightningBoltIcon'"
-      class="h-12 text-gray-100 rounded-full"
-      aria-hidden="true"
-    />
-
-    <ClockIcon
-      v-if="icon === 'ClockIcon'"
-      class="h-12 text-gray-100 rounded-full"
-      aria-hidden="true"
-    /> -->
-
       <div class="<==STEP-PANEL__INNER==> flex flex-col flex-grow">
         <slot></slot>
       </div>
     </div>
   </transition>
 </template>
-
-<script setup lang="ts">
-import { defineProps } from 'vue'
-import { LightningBoltIcon, ClockIcon } from '@heroicons/vue/outline'
-
-const props = defineProps({
-  icon: String,
-})
-</script>

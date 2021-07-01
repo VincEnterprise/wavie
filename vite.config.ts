@@ -1,17 +1,18 @@
 import path from 'path'
-import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import Vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
-import ViteComponents from 'vite-plugin-components'
+import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
 import Pages from 'vite-plugin-pages'
 import { VitePWA } from 'vite-plugin-pwa'
 import Layouts from 'vite-plugin-vue-layouts'
+import ViteComponents, { HeadlessUiResolver, } from 'vite-plugin-components'
 
 export default defineConfig({
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
+      'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js',
     },
   },
   plugins: [
@@ -36,10 +37,11 @@ export default defineConfig({
 
       // auto import icons
       customComponentResolvers: [
+        HeadlessUiResolver(),
         // https://github.com/antfu/vite-plugin-icons
         ViteIconsResolver({
           componentPrefix: '',
-          // enabledCollections: ['carbon']
+          enabledCollections: ['uil']
         }),
       ],
     }),

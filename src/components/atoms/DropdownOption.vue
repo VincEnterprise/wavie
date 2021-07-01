@@ -23,6 +23,8 @@
           from-yellow-500
           to-yellow-400
           rounded-full
+          <!--🚀-->
+          duration-1000
         "
       ></div>
       <div
@@ -43,20 +45,23 @@
           bg-gradient-to-b
           from-yellow-400
           to-yellow-500
+          text-yellow-900
           <!--🚀-->
           will-transform
           origin-left
           ease-button-cubic-1
         "
       ></div>
-      <span :class="selected && 'font-semibold'" class="block truncate">
+      <span
+        :class="active && 'text-yellow-900'"
+        class="block truncate duration-200">
         {{ option.label }}
       </span>
       <span
         v-if="selected"
         class="absolute inset-y-0 left-0 flex items-center pl-3"
       >
-        <CheckIcon class="w-5 h-5" aria-hidden="true" />
+        <uil-check :class="active && 'text-yellow-900'" class="duration-200 w-6 h-6" />
       </span>
     </li>
   </ListboxOption>
@@ -64,8 +69,6 @@
 
 <script setup lang="ts">
 import { defineProps } from 'vue'
-import { ListboxOption } from '@headlessui/vue'
-import { CheckIcon } from '@heroicons/vue/solid'
 
 const props = defineProps({
   optionsArray: { type: Array, required: true },

@@ -20,7 +20,6 @@
       <div class="noise-texture absolute inset-0"></div>
       <div class="bg-gradient-to-b from-white/25 to-white/30 mask-exclude absolute sm:rounded-4xl inset-0 py-[3px] sm:p-[3px]"></div>
     </div>
-
     <slot></slot>
   </section>
 </template>
