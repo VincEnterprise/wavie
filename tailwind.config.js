@@ -1,65 +1,73 @@
 /** @type {import("@types/tailwindcss/tailwind-config").TailwindConfig } */
 module.exports = {
   mode: 'jit',
+
   purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+
   theme: {
+    //
+    // ─── COLORS ──────────────────────────────────────────────────────
+    //
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      black: '#1a1a1a',
+      black: '#18181B',
       white: '#ffffff',
 
-      yellow: {
-        DEFAULT: '#FFBC52',
-        50: '#FFFFFF',
-        100: '#FFFFFF',
-        200: '#FFF7EB',
-        300: '#FFE4B8',
-        400: '#FFD085',
-        500: '#FFBC52',
-        600: '#FFA81F',
-        700: '#EB9000',
-        800: '#B87100',
-        900: '#855100',
-      },
       gray: {
-        DEFAULT: '#9CA3AF',
-        50: '#F9FAFB',
-        100: '#F3F4F6',
-        200: '#E5E7EB',
-        300: '#D1D5DB',
-        400: '#9CA3AF',
-        500: '#6B7280',
-        600: ' #4B5563',
-        700: '#374151',
-        800: '#1F2937',
-        900: '#111827',
+        DEFAULT: '#71717A',
+        50: '#FAFAFA',
+        100: '#F4F4F5',
+        200: '#E4E4E7',
+        300: '#D4D4D8',
+        400: '#A1A1AA',
+        500: '#71717A',
+        600: '#52525B',
+        700: '#3F3F46',
+        800: '#27272A',
+        900: '#18181B',
       },
+
+      yellow: {
+        DEFAULT: '#FFC94D',
+        50: '#FFF3D6',
+        100: '#FFEEC7',
+        200: '#FFE5A8',
+        300: '#FFDC8A',
+        400: '#FFD36B',
+        500: '#FFC94D',
+        600: '#FFB70F',
+        700: '#D19200',
+        800: '#946800',
+        900: '#573D00',
+      },
+
       orange: {
-        DEFAULT: '#FF8652',
-        50: '#FFFFFF',
-        100: '#FFFFFF',
-        200: '#FFF1EB',
-        300: '#FFCDB8',
-        400: '#FFAA85',
-        500: '#FF8652',
-        600: '#FF621F',
-        700: '#EB4700',
-        800: '#B83700',
-        900: '#852800',
+        DEFAULT: '#FF824D',
+        50: '#FFE2D6',
+        100: '#FFD8C7',
+        200: '#FFC2A8',
+        300: '#FFAD8A',
+        400: '#FF986B',
+        500: '#FF824D',
+        600: '#FF570F',
+        700: '#D13F00',
+        800: '#942C00',
+        900: '#571A00',
       },
+
       green: {
-        DEFAULT: '#A9DC76',
-        50: '#FFFFFF',
-        100: '#FFFFFF',
-        200: '#F6FBF0',
-        300: '#DCF1C7',
-        400: '#C3E69F',
-        500: '#A9DC76',
-        600: '#90D24D',
-        700: '#76BC30',
-        800: '#5D9326',
-        900: '#436B1B',
+        DEFAULT: '#A6E269',
+        50: '#EBF8DD',
+        100: '#E3F6D0',
+        200: '#D4F1B6',
+        300: '#C4EC9C',
+        400: '#B5E783',
+        500: '#A6E269',
+        600: '#8AD93A',
+        700: '#6EB823',
+        800: '#52891A',
+        900: '#365A11',
       },
     },
 
@@ -91,6 +99,21 @@ module.exports = {
             theme(colors.gray.200) 100%
             )`,
       }),
+
+      transitionDuration: {
+        34: '34ms',
+        250: '250ms',
+        400: '400ms',
+        600: '600ms',
+      },
+      transitionTimingFunction: {
+        'button-cubic-1': 'cubic-bezier(0.3, 0.7, 0.4, 1)',
+        'button-cubic-2': 'cubic-bezier(0.3, 0.7, 0.4, 2)',
+      },
+
+      //
+      // ─── ANIMATIONS ──────────────────────────────────────────────────
+      //
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
         fade: 'fade 2s ease-out infinite',
@@ -105,28 +128,28 @@ module.exports = {
           '50%': { opacity: 0 },
         },
       },
+
+      //
+      // ─── MISC ────────────────────────────────────────────────────────
+      //
       borderWidth: {
         3: '3px',
         5: '5px',
       },
+
       borderRadius: {
         '2.5xl': '1.25rem',
         '4xl': '3rem',
       },
-      transitionDuration: {
-        34: '34ms',
-        250: '250ms',
-        400: '400ms',
-        600: '600ms',
-      },
-      transitionTimingFunction: {
-        'button-cubic-1': 'cubic-bezier(0.3, 0.7, 0.4, 1)',
-        'button-cubic-2': 'cubic-bezier(0.3, 0.7, 0.4, 2)',
-      },
+
+      //
+      // ─── LAYOUT ──────────────────────────────────────────────────────
+      //
       zIndex: {
         '-1': '-1',
         '1': '1',
       },
+
       container: {
         center: true,
         screens: {
@@ -138,6 +161,7 @@ module.exports = {
       },
     },
   },
+
   plugins: [
     // require("@tailwindcss/forms"),
   ],

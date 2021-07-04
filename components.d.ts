@@ -15,16 +15,16 @@ declare module 'vue' {
     Dropdown: typeof import('./src/components/molecules/Dropdown.vue')['default']
     ConverterGroup: typeof import('./src/components/organisms/ConverterGroup.vue')['default']
     UilClockEight: typeof import('virtual:vite-icons/uil/clock-eight')['default']
-    ListboxLabel: typeof import('@headlessui/vue')['ListboxLabel']
-    UilAngleDown: typeof import('virtual:vite-icons/uil/angle-down')['default']
-    Listbox: typeof import('@headlessui/vue')['Listbox']
     SwitchLabel: typeof import('@headlessui/vue')['SwitchLabel']
     Switch: typeof import('@headlessui/vue')['Switch']
     SwitchGroup: typeof import('@headlessui/vue')['SwitchGroup']
+    ListboxLabel: typeof import('@headlessui/vue')['ListboxLabel']
+    UilAngleDown: typeof import('virtual:vite-icons/uil/angle-down')['default']
+    Listbox: typeof import('@headlessui/vue')['Listbox']
     ListboxButton: typeof import('@headlessui/vue')['ListboxButton']
+    ListboxOptions: typeof import('@headlessui/vue')['ListboxOptions']
     UilCheck: typeof import('virtual:vite-icons/uil/check')['default']
     ListboxOption: typeof import('@headlessui/vue')['ListboxOption']
-    ListboxOptions: typeof import('@headlessui/vue')['ListboxOptions']
   }
 }
 
