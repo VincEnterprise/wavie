@@ -1,6 +1,6 @@
 <template>
   <section
-    class="<==GLASS-PANEL__WRAPPER==> relative z-1 p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12"
+    class="<==GLASS-PANEL__WRAPPER==> relative z-1 px-2 py-6 sm:p-6 md:p-8 lg:p-10 xl:p-12"
   >
     <div
       class="

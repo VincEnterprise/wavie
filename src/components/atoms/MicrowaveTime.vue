@@ -1,9 +1,9 @@
 <template>
   <div class="<==CLOCK==> flex gap-1">
     <template v-for="(character, index) in split" :key="index">
-        <span
-          v-if="':' === character"
-          class="
+      <span
+        v-if="':' === character"
+        class="
           <==CLOCK__COLON==>
           animate-fade
           <!--📦-->
@@ -17,21 +17,23 @@
           text-3xl text-gray-800
           leading-none
         "
-        >
-          {{ character }}
-        </span>
+      >
+        {{ character }}
+      </span>
 
-        <transition v-else mode="out-in"
-          leave-active-class="transition duration-300 ease-in"
-          leave-from-class="opacity-100 scale-x-100"
-          leave-to-class="opacity-0 scale-x-1/4"
-          enter-active-class="transition duration-300 ease-out"
-          enter-from-class="opacity-0 scale-x-1/4"
-          enter-to-class="opacity-100 scale-x-100"
-        >
-          <span
-            :key="character"
-            class="
+      <transition
+        v-else
+        mode="out-in"
+        leave-active-class="transition duration-300 ease-in"
+        leave-from-class="opacity-100 scale-x-100"
+        leave-to-class="opacity-0 scale-x-1/4"
+        enter-active-class="transition duration-300 ease-out"
+        enter-from-class="opacity-0 scale-x-1/4"
+        enter-to-class="opacity-100 scale-x-100"
+      >
+        <span
+          :key="character"
+          class="
               <==CLOCK__NUMBER==>
               <!--📦-->
               relative
@@ -53,8 +55,7 @@
               <!--🚀-->
               will-transform
             "
-          >
-          <div class="absolute place-content-center w-full h-0.5 bg-gray-600"></div>
+        >
           {{ character }}
         </span>
       </transition>

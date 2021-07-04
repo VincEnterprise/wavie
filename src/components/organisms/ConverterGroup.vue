@@ -1,7 +1,7 @@
 <template>
   <transition-group
     tag="div"
-    class="grid grid-cols-1 md:grid-cols-2 gap-8"
+    class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
     :show="true"
     appear
   >
@@ -20,8 +20,8 @@
     </StepPanel>
 
     <StepPanel :key="3">
-      <h2 class="text-gray-700 font-semibold flex items-center mb-4">
-        <uil-clock-eight class="h-5 text-gray-600 rounded-full mr-1.5" />
+      <h2 class="label">
+        <uil-clock-eight class="label__icon" />
         {{ t('label.microwave-time') }}
       </h2>
       <div class="flex flex-grow flex-wrap gap-5">
@@ -35,6 +35,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import type { Dropdown } from '~/types'
 
 const { t } = useI18n()
 
@@ -48,7 +49,7 @@ function* range(start: number, end: number, step: number) {
   }
 }
 
-function formatSeconds(seconds: number) {
+function formatSeconds(seconds: number): string {
   const ISOString = new Date(seconds * 1000).toISOString()
 
   // If the time is over an hour (3600 seconds) we need to also show the "HH:" part of the ISO string.
@@ -72,7 +73,7 @@ const times = Array.from(range(30, 900, 30)).map((seconds) => {
 //
 // ─── SET DATA FOR 3 DROPDOWNS ───────────────────────────────────────────────────
 //
-const dropdowns = ref([
+const dropdowns = ref<Dropdown[]>([
   {
     id: 0,
     value: 700,
@@ -99,7 +100,7 @@ const dropdowns = ref([
 //
 // ─── HANDLE WHEN A NEW DROPDOWN OPTION IS PICKED ────────────────────────────────
 //
-function handleOptionUpdate({ id, value }: { id: number; value: number }) {
+function handleOptionUpdate({ id, value }: { id: number; value: number }): void {
   dropdowns.value[id].value = value
 }
 
@@ -108,14 +109,14 @@ function handleOptionUpdate({ id, value }: { id: number; value: number }) {
 //
 const rounded = ref(true)
 
-function handleToggleUpdate(bool: boolean) {
+function handleToggleUpdate(bool: boolean): void {
   rounded.value = bool
 }
 
 //
 // ─── CALCULATE MICROWAVE TIME ───────────────────────────────────────────────────
 //
-const microwaveTime = computed(() => {
+const microwaveTime = computed((): string => {
   const [packageWattage, packageTime, microwaveWattage] = dropdowns.value
 
   // Divide package time by ( microwave wattage / package wattage )

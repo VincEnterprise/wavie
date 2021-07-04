@@ -2,10 +2,11 @@
   <footer
     class="
           pt-20
+          px-4
           text-center
           transition-opacity
           duration-700
-          opacity-0
+          lg:opacity-0
           hover:opacity-100
           focus-visible:opacity-100
         "

@@ -6,7 +6,7 @@
     :value="option"
     as="template"
   >
-    <li class="relative cursor-pointer select-none py-2 pl-10 pr-4'">
+    <li class="relative cursor-pointer select-none py-2 pl-10 pr-4 sm:tracking-wider focus:outline-none">
       <div
         v-if="selected"
         :class="active && 'opacity-0'"
@@ -22,7 +22,7 @@
           bg-gradient-to-b
           from-yellow-500
           to-yellow-400
-          rounded-full
+          rounded-2xl
           <!--🚀-->
           duration-1000
         "
@@ -41,7 +41,7 @@
           inset-0
           <!--💄-->
           shadow-md
-          rounded-full
+          rounded-2xl
           bg-gradient-to-b
           from-yellow-400
           to-yellow-500
@@ -54,7 +54,8 @@
       ></div>
       <span
         :class="active && 'text-yellow-900'"
-        class="block truncate duration-200">
+        class="block truncate duration-200"
+      >
         {{ option.label }}
       </span>
       <span
@@ -69,8 +70,13 @@
 
 <script setup lang="ts">
 import { defineProps } from 'vue'
+import type { PropType } from 'vue'
+import type { Option } from '~/types'
 
-const props = defineProps({
-  optionsArray: { type: Array, required: true },
+const _props = defineProps({
+  optionsArray: {
+    type: Array as PropType<Option[]>,
+    required: true,
+  },
 })
 </script>

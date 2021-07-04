@@ -12,12 +12,12 @@
         flex
         gap-2
         w-full
-        p-4
-        sm:p-6
+        p-6
         lg:p-8
         xl:p-10
         <!--💄-->
         bg-white
+        text-gray-600
         rounded-3xl
         shadow-md
         <!--🚀-->
@@ -25,7 +25,7 @@
         duration-300
       "
     >
-      <div class="<==STEP-PANEL__INNER==> flex flex-col flex-grow">
+      <div class="<==STEP-PANEL__INNER==> flex flex-col flex-grow max-w-full ">
         <slot></slot>
       </div>
     </div>

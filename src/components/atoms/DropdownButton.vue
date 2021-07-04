@@ -1,5 +1,6 @@
 <template>
   <ListboxButton
+    v-slot="{ open }"
     class="
       <==BUTTON==>
       <!--📦️-->
@@ -20,10 +21,9 @@
         absolute
         inset-0
         <!--💄-->
-        rounded-full
+        rounded-2xl
         bg-gray-300
         translate-y-0.5
-        filter
         blur-sm
         <!--🚀-->
         will-transform
@@ -45,7 +45,7 @@
         inset-0
         <!--💄-->
         bg-button-edge
-        rounded-full
+        rounded-2xl
       "
     >
     </span>
@@ -53,31 +53,39 @@
       class="
         <==BUTTON__FR0NT==>
         <!--📦️-->
-        relative
         block
-        w-full
         py-2
-        px-6
-        sm:px-8
+        pl-6
+        pr-12
         sm:py-3
-        -translate-y-1
+        sm:pl-8
+        sm:pr-14
+        -translate-y-1.5
         <!--💄-->
         bg-white
         border-2 border-gray-100
-        rounded-full
+        rounded-2xl
         <!--🚀-->
         will-transform
         transition-transform
         duration-600
         ease-button-cubic-1
         <!--👇-->
-        group-hover:-translate-y-1.5
+        group-hover:-translate-y-2
         group-hover:duration-250
         group-hover:ease-button-cubic-2
-        group-focus-visible:-translate-y-0.5
-        group-focus-visible:duration-34
-        group-active:duration-34
+
+        group-focus-visible:-translate-y-2
+        group-focus-visible:duration-250
+        group-focus-visible:ease-button-cubic-2
+
         group-active:-translate-y-0.5
+        group-active:duration-34
+      "
+      :class="
+        open
+          ? 'ease-button-cubic-2 duration-34 -translate-y-0.5 group-hover:-translate-y-0.5'
+          : ``
       "
     >
       <slot></slot>

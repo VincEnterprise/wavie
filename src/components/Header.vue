@@ -1,6 +1,6 @@
 <template>
   <header class="text-center">
-    <h1 class="wavey-title mb-10 sm:mb-12 text-7xl md:text-8xl lg:text-9xl font-bold text-gray-800">
+    <h1 class="wavey-title tracking-normal px-4 mb-10 sm:mb-12 text-7xl md:text-8xl lg:text-9xl font-bold text-gray-800">
       wavie
     </h1>
   </header>

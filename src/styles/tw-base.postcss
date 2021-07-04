@@ -7,14 +7,16 @@
     font-display: swap;
     font-style: normal;
     font-named-instance: "Medium";
-    src: local("Quicksand"), url("../font/QuicksandVF.woff2") format("woff2"),
-      url("../font/QuicksandVF.woff") format("woff");
+    src: local("Quicksand"), url("../font/QuicksandVF.woff2") format("woff2")
   }
 
   html {
-    background-color: theme("colors.yellow.500");
     font-size: 18px;
-    @apply text-gray-800;
+    @apply bg-yellow-500 text-gray-800 selection:text-yellow-900 selection:bg-yellow-400 tracking-wide;
+  }
+
+  a {
+    @apply focus:outline-none focus:ring focus:border-orange-500;
   }
 
   * {

@@ -11,8 +11,6 @@
       items-center
       gap-2
       mb-0.5
-      focus:outline-none
-      focus-visible:ring-4
     "
   >
     <SwitchLabel active class="<==TOGGLE__LABEL==> cursor-pointer">
@@ -34,7 +32,7 @@
         <!--💄-->
         bg-gradient-to-r bg-origin-border-box
         border-2 border-transparent
-        rounded-full
+        rounded-xl
         shadow-md
         <!--🚀-->
         transition-colors
@@ -44,8 +42,8 @@
         cursor-pointer
         focus:outline-none
         focus-visible:ring-2
-        focus-visible:ring-white
-        focus-visible:ring-opacity-75
+        focus-visible:ring-offset-2
+        focus-visible:ring-yellow
       "
     >
       <span class="sr-only">Use setting</span>
@@ -59,7 +57,7 @@
           h-5
           w-5
           <!--💄-->
-          rounded-full
+          rounded-xl
           bg-white
           border-gray-200
           shadow-lg

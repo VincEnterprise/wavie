@@ -1,5 +1,3 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
-
 /** @type {import("@types/tailwindcss/tailwind-config").TailwindConfig } */
 module.exports = {
   mode: 'jit',
@@ -77,7 +75,7 @@ module.exports = {
     },
 
     extend: {
-      backgroundImage: theme => ({
+      backgroundImage: _theme => ({
         'button-edge': `linear-gradient(
             to left,
             theme(colors.gray.200) 0%,
@@ -111,6 +109,10 @@ module.exports = {
         3: '3px',
         5: '5px',
       },
+      borderRadius: {
+        '2.5xl': '1.25rem',
+        '4xl': '3rem',
+      },
       transitionDuration: {
         34: '34ms',
         250: '250ms',
@@ -125,16 +127,13 @@ module.exports = {
         '-1': '-1',
         '1': '1',
       },
-      borderRadius: {
-        '4xl': '3rem',
-      },
       container: {
         center: true,
         screens: {
           sm: '100%',
           md: '100%',
           lg: '100%',
-          xl: '1200px',
+          xl: '1150px',
         },
       },
     },
