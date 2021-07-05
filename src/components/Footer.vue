@@ -8,6 +8,7 @@
           duration-700
           lg:opacity-0
           hover:opacity-100
+          focus-within:opacity-100
           focus-visible:opacity-100
         "
   >
