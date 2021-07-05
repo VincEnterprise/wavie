@@ -106,6 +106,7 @@ module.exports = {
         400: '400ms',
         600: '600ms',
       },
+
       transitionTimingFunction: {
         'button-cubic-1': 'cubic-bezier(0.3, 0.7, 0.4, 1)',
         'button-cubic-2': 'cubic-bezier(0.3, 0.7, 0.4, 2)',
@@ -118,11 +119,13 @@ module.exports = {
         wiggle: 'wiggle 1s ease-in-out infinite',
         fade: 'fade 2s ease-out infinite',
       },
+
       keyframes: {
         wiggle: {
           '0%, 100%': { transform: 'rotate(-3deg)' },
           '50%': { transform: 'rotate(3deg)' },
         },
+
         fade: {
           '0%, 100%': { opacity: 1 },
           '50%': { opacity: 0 },

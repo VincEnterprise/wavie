@@ -59,8 +59,8 @@ export default defineConfig({
       manifest: {
         name: 'wavey',
         short_name: 'wavey',
-        theme_color: '#FFBC52',
-        background_color: '#FFBC52',
+        theme_color: '#FFC94D',
+        background_color: '#FFC94D',
         icons: [
           {
             src: '/pwa-192x192.png',
