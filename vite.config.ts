@@ -6,7 +6,8 @@ import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
 import Pages from 'vite-plugin-pages'
 import { VitePWA } from 'vite-plugin-pwa'
 import Layouts from 'vite-plugin-vue-layouts'
-import ViteComponents, { HeadlessUiResolver, } from 'vite-plugin-components'
+import ViteComponents, { HeadlessUiResolver } from 'vite-plugin-components'
+import SVG from 'vite-plugin-vue-svg'
 
 export default defineConfig({
   resolve: {
@@ -16,9 +17,11 @@ export default defineConfig({
     },
   },
   server: {
-    host: '0.0.0.0'
+    host: '0.0.0.0',
   },
   plugins: [
+    SVG(),
+
     Vue({
       include: [/\.vue$/],
     }),
@@ -34,9 +37,11 @@ export default defineConfig({
     // https://github.com/antfu/vite-plugin-components
     ViteComponents({
       // allow auto load markdown components under `./src/components/`
-      extensions: ['vue'],
+      extensions: ['vue', 'svg'],
 
       globalComponentsDeclaration: true,
+
+      importPathTransform: path => path.endsWith('.svg') ? `${path}?component` : undefined,
 
       // auto import icons
       customComponentResolvers: [
@@ -44,7 +49,7 @@ export default defineConfig({
         // https://github.com/antfu/vite-plugin-icons
         ViteIconsResolver({
           componentPrefix: '',
-          enabledCollections: ['uil']
+          enabledCollections: ['uil'],
         }),
       ],
     }),
