@@ -6,7 +6,7 @@
     :value="option"
     as="template"
   >
-    <li class="relative cursor-pointer select-none py-2 pl-10 pr-4 sm:tracking-wider focus:outline-none">
+    <li class="relative cursor-pointer select-none py-1.5 pr-3 pl-10 sm:py-2 sm:pr-4 sm:tracking-wider focus:outline-none">
       <div
         v-if="selected"
         :class="active && 'opacity-0'"

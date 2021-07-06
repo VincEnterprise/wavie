@@ -16,7 +16,9 @@
         absolute
         max-h-60
         w-full
-        p-4
+        p-2
+        sm:p-3
+        md:p-4
         mt-2
         sm:mt-4
         overflow-auto
