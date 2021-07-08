@@ -87,7 +87,7 @@ const emit = defineEmit(['update-toggle'])
 const { initialValue } = props
 const enabled = ref(initialValue)
 
-watch(enabled, (bool) => {
-  emit('update-toggle', bool)
+watch(enabled, (newValue) => {
+  emit('update-toggle', newValue)
 })
 </script>

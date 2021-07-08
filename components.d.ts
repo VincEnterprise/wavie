@@ -24,8 +24,8 @@ declare module 'vue' {
     SwitchLabel: typeof import('@headlessui/vue')['SwitchLabel']
     Switch: typeof import('@headlessui/vue')['Switch']
     SwitchGroup: typeof import('@headlessui/vue')['SwitchGroup']
-    ListboxOptions: typeof import('@headlessui/vue')['ListboxOptions']
     ListboxButton: typeof import('@headlessui/vue')['ListboxButton']
+    ListboxOptions: typeof import('@headlessui/vue')['ListboxOptions']
     UilCheck: typeof import('virtual:vite-icons/uil/check')['default']
     ListboxOption: typeof import('@headlessui/vue')['ListboxOption']
   }

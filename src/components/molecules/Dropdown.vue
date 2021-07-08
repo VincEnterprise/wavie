@@ -121,8 +121,8 @@ const selectedOption = ref(optionsArray[initialPos])
 // Send selectedOption to ConverterGroup.vue
 watch(selectedOption, (selectedOption: Option) => {
   emit('update-option', {
-    value: selectedOption.value,
-    id,
+    optionValue: selectedOption.value,
+    dropdownId: id,
   })
 })
 </script>

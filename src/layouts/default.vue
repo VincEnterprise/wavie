@@ -10,7 +10,6 @@
 
 <style>
 .microwave-gradient {
-  background: theme("colors.orange.500");
   background: linear-gradient(
     90deg,
     theme("colors.yellow.500") 0%,
@@ -24,19 +23,11 @@
 }
 
 @keyframes scrolling-gradient {
-  0% {
+  0%, 5% {
     background-position: 125% 0;
   }
 
-  5% {
-    background-position: 125% 0;
-  }
-
-  95% {
-    background-position: -25% 0;
-  }
-
-  100% {
+  95%, 100% {
     background-position: -25% 0;
   }
 }

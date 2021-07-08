@@ -12,11 +12,11 @@
 .microwave-gradient {
   background: linear-gradient(
     90deg,
-    transparent 0%,
-    transparent 25%,
+    theme("colors.yellow.500") 0%,
+    theme("colors.yellow.500") 25%,
     theme("colors.orange.500") 50%,
-    transparent 75%,
-    transparent 100%
+    theme("colors.yellow.500") 75%,
+    theme("colors.yellow.500") 100%,
   );
   background-size: 300%;
   animation: scrolling-gradient 10s linear infinite;

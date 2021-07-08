@@ -1,5 +1,5 @@
 <template>
-  <div class="<==CLOCK==> flex gap-1">
+  <div class="<==CLOCK==> flex gap-1.5">
     <template v-for="(character, index) in split" :key="index">
       <span
         v-if="':' === character"
@@ -47,7 +47,6 @@
               from-gray-700
               via-gray-600
               to-gray-700
-              border border-gray-100
               shadow-md
               <!--🅰️-->
               text-3xl text-white

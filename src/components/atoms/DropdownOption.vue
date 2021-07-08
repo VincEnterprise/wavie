@@ -73,7 +73,7 @@ import { defineProps } from 'vue'
 import type { PropType } from 'vue'
 import type { Option } from '~/types'
 
-const _props = defineProps({
+const props = defineProps({
   optionsArray: {
     type: Array as PropType<Option[]>,
     required: true,

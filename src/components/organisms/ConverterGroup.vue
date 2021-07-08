@@ -1,7 +1,7 @@
 <template>
   <transition-group
     tag="div"
-    class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
+    class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8"
     :show="true"
     appear
   >
@@ -100,8 +100,8 @@ const dropdowns = ref<Dropdown[]>([
 //
 // ─── HANDLE WHEN A NEW DROPDOWN OPTION IS PICKED ────────────────────────────────
 //
-function handleOptionUpdate({ id, value }: { id: number; value: number }): void {
-  dropdowns.value[id].value = value
+function handleOptionUpdate({ dropdownId, optionValue }: { dropdownId: number; optionValue: number }): void {
+  dropdowns.value[dropdownId].value = optionValue
 }
 
 //
@@ -109,8 +109,8 @@ function handleOptionUpdate({ id, value }: { id: number; value: number }): void 
 //
 const rounded = ref(true)
 
-function handleToggleUpdate(bool: boolean): void {
-  rounded.value = bool
+function handleToggleUpdate(newValue: boolean): void {
+  rounded.value = newValue
 }
 
 //
