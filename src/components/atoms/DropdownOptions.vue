@@ -10,19 +10,14 @@
     <ListboxOptions
       class="
         <==LISTBOX==>
-        scroll-smooth
-        no-scrollbar
         <!--📦-->
         absolute
-        max-h-60
+        h-60
         w-full
-        p-2
-        sm:p-3
-        md:p-4
         mt-2
         sm:mt-4
-        overflow-auto
         z-10
+        overflow-hidden
         <!--💄-->
         bg-white/90
         border-2 border-gray-100
@@ -36,7 +31,11 @@
         focus:outline-none
       "
     >
-      <slot></slot>
+      <ScrollableWrapper>
+        <ScrollableContent>
+          <slot></slot>
+        </ScrollableContent>
+      </ScrollableWrapper>
     </ListboxOptions>
   </transition>
 </template>

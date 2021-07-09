@@ -17,6 +17,8 @@ declare module 'vue' {
     Bolt: typeof import('./src/components/svgs/bolt.svg')['default']
     ClockEight: typeof import('./src/components/svgs/clock-eight.svg')['default']
     Clock: typeof import('./src/components/svgs/clock.svg')['default']
+    ScrollableWrapper: typeof import('./src/components/atoms/ScrollableWrapper.vue')['default']
+    ScrollableContent: typeof import('./src/components/atoms/ScrollableContent.vue')['default']
     UilClockEight: typeof import('virtual:vite-icons/uil/clock-eight')['default']
     ListboxLabel: typeof import('@headlessui/vue')['ListboxLabel']
     UilAngleDown: typeof import('virtual:vite-icons/uil/angle-down')['default']
