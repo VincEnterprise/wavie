@@ -1,6 +1,5 @@
 <template>
   <ListboxOption
-    v-for="option in optionsArray"
     v-slot="{ active, selected }"
     :key="option.value"
     :value="option"
@@ -69,18 +68,14 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, onBeforeUnmount } from 'vue'
+import { defineProps } from 'vue'
 import type { PropType } from 'vue'
 import type { Option } from '~/types'
 
 const props = defineProps({
-  optionsArray: {
-    type: Array as PropType<Option[]>,
+  option: {
+    type: Object as PropType<Option>,
     required: true,
   },
-})
-
-onBeforeUnmount(() => {
-  console.log('destroyed')
 })
 </script>

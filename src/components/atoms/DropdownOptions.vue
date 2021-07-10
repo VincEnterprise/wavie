@@ -33,7 +33,21 @@
     >
       <ScrollShadows>
         <slot></slot>
+        <DropdownOption v-for="(option, key) in optionsArray" :key="key" :option="option"></DropdownOption>
       </ScrollShadows>
     </ListboxOptions>
   </transition>
 </template>
+
+<script setup lang="ts">
+import { defineProps } from 'vue'
+import type { PropType } from 'vue'
+import type { Option } from '~/types'
+
+const props = defineProps({
+  optionsArray: {
+    type: Array as PropType<Option[]>,
+    required: true,
+  },
+})
+</script>

@@ -68,9 +68,7 @@
         </span>
       </DropdownButton>
 
-      <DropdownOptions>
-        <DropdownOption :options-array="optionsArray" />
-      </DropdownOptions>
+      <DropdownOptions :options-array="optionsArray" />
     </div>
   </Listbox>
 </template>
