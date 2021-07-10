@@ -69,7 +69,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue'
+import { defineProps, onBeforeUnmount } from 'vue'
 import type { PropType } from 'vue'
 import type { Option } from '~/types'
 
@@ -78,5 +78,9 @@ const props = defineProps({
     type: Array as PropType<Option[]>,
     required: true,
   },
+})
+
+onBeforeUnmount(() => {
+  console.log('destroyed')
 })
 </script>

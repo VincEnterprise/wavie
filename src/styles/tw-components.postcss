@@ -1,9 +1,11 @@
 @import 'tailwindcss/components';
 
-.label {
+@layer components {
+    .label {
     @apply font-semibold flex items-center ml-2 md:ml-0 mb-4 md:mb-5 select-none md:select-auto;
 
-    &__icon {
-        @apply h-6 w-6 opacity-90 hidden md:inline-flex mr-1.5;
+        &__icon {
+            @apply h-6 w-6 opacity-90 hidden md:inline-flex mr-1.5;
+        }
     }
 }

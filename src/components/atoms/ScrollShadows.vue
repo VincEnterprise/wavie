@@ -1,0 +1,49 @@
+<template>
+  <div class="<==SCROLL-SHADOW==> relative flex flex-auto w-full h-full min-h-0">
+    <div
+      class="
+        <==SCROLL-SHADOW__TOP==>
+        <!--📦-->
+        absolute
+        inset-x-0
+        top-0
+        h-6
+        z-20
+        <!--👇-->
+        pointer-events-none
+        bg-gradient-to-b from-white to-white/0
+      "
+    >
+    </div>
+    <div
+      class="
+        <==SCROLL-SHADOW__CONTENT==>
+        scroll-smooth
+        no-scrollbar
+        <!--📦-->
+        w-full
+        overflow-y-auto
+        <!--💄-->
+        p-2
+        sm:p-3
+        md:p-4"
+    >
+      <slot></slot>
+    </div>
+    <div
+      class="
+        <==SCROLL-SHADOW__BOTTOM==>
+        <!--📦-->
+        absolute
+        inset-x-0
+        bottom-0
+        h-6
+        z-20
+        <!--👇-->
+        pointer-events-none
+        bg-gradient-to-t from-white to-white/0
+      "
+    >
+    </div>
+  </div>
+</template>

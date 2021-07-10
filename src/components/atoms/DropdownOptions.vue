@@ -12,18 +12,18 @@
         <==LISTBOX==>
         <!--📦-->
         absolute
-        h-60
+        h-52
+        md:h-60
         w-full
         mt-2
         sm:mt-4
         z-10
         overflow-hidden
         <!--💄-->
-        bg-white/90
+        bg-white
         border-2 border-gray-100
-        backdrop-filter backdrop-blur-lg
         rounded-3xl
-        shadow-2xl
+        shadow-3xl
         <!--🚀-->
         will-transform
         <!--👇-->
@@ -31,11 +31,9 @@
         focus:outline-none
       "
     >
-      <ScrollableWrapper>
-        <ScrollableContent>
-          <slot></slot>
-        </ScrollableContent>
-      </ScrollableWrapper>
+      <ScrollShadows>
+        <slot></slot>
+      </ScrollShadows>
     </ListboxOptions>
   </transition>
 </template>
