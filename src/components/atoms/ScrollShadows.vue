@@ -18,7 +18,6 @@
     <div
       class="
         <==SCROLL-SHADOW__CONTENT==>
-        scroll-smooth
         no-scrollbar
         <!--📦-->
         w-full
